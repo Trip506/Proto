@@ -21,6 +21,7 @@
 import Hover from '../components/Hover.vue'
 import Carousel from '../components/Carousel.vue'
 import Gallery from '../components/Gallery.vue'
+
 export default {
 	components: {
 		Carousel,

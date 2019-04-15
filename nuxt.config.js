@@ -42,6 +42,10 @@ export default {
   plugins: [
     '@/plugins/vuetify',
 
+    '@/plugins/vue-resource',
+
+
+
   ],
 
   /*

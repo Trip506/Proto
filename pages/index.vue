@@ -13,7 +13,7 @@
 			</v-flex>
 		</v-container>
 
-		<hover></hover>
+		<VueResourceCall></VueResourceCall>
 	</v-layout>
 </template>
 
@@ -21,12 +21,14 @@
 import Hover from '../components/Hover.vue'
 import Carousel from '../components/Carousel.vue'
 import Gallery from '../components/Gallery.vue'
+import VueResourceCall from '../components/VueResourceCall.vue'
 
 export default {
 	components: {
 		Carousel,
 		Gallery,
-		Hover
+		Hover,
+		VueResourceCall
 	}
 }
 </script>

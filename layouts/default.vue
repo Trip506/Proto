@@ -19,20 +19,23 @@
 			</v-list>
 		</v-navigation-drawer>
 		<v-toolbar :clipped-left="clipped" fixed app color="primary">
-			<v-toolbar-side-icon @click="drawer = !drawer"/>
+			<!-- <v-toolbar-side-icon @click="drawer = !drawer"/> -->
+			<v-btn icon @click="drawer = !drawer">
+				<v-icon :color="toolbarButtonColor">menu</v-icon>
+			</v-btn>
 			<v-btn icon @click.stop="miniVariant = !miniVariant">
-				<v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
+				<v-icon :color="toolbarButtonColor">{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
 			</v-btn>
 			<v-btn icon @click.stop="clipped = !clipped">
-				<v-icon>web</v-icon>
+				<v-icon :color="toolbarButtonColor">web</v-icon>
 			</v-btn>
 			<v-btn icon @click.stop="fixed = !fixed">
-				<v-icon>remove</v-icon>
+				<v-icon :color="toolbarButtonColor">remove</v-icon>
 			</v-btn>
-			<v-toolbar-title v-text="title"/>
+			<v-toolbar-title class="toolbar-title" v-text="title"/>
 			<v-spacer/>
 			<v-btn icon @click.stop="rightDrawer = !rightDrawer">
-				<v-icon>menu</v-icon>
+				<v-icon :color="toolbarButtonColor">menu</v-icon>
 			</v-btn>
 		</v-toolbar>
 		<v-content>
@@ -50,8 +53,26 @@
 				</v-list-tile>
 			</v-list>
 		</v-navigation-drawer>
-		<v-footer :fixed="fixed" app>
+		<!-- <v-footer :fixed="fixed" app>
 			<span>&copy; 2019</span>
+		</v-footer>-->
+		<v-footer height="auto" :color="footerColor">
+			<v-layout justify-center row wrap>
+				<v-btn
+					v-for="(item, i) in items"
+					:key="i"
+					:to="item.to"
+					router
+					exact
+					:color="footerTextColor"
+					flat
+					round
+				>{{ item.title }}</v-btn>
+				<v-flex secondary lighten-2 py-3 text-xs-center white--text xs12>
+					&copy;2018 —
+					<strong>Vuetify</strong>
+				</v-flex>
+			</v-layout>
 		</v-footer>
 	</v-app>
 </template>
@@ -78,8 +99,20 @@ export default {
 			miniVariant: false,
 			right: true,
 			rightDrawer: false,
-			title: 'Vuetify.js'
+			title: 'Samuel Furneaux',
+			toolbarColor: 'primary',
+			toolbarTitleColor: '',
+			toolbarButtonColor: 'white',
+			footerTextColor: 'white',
+			footerColor: 'secondary lighten-1'
 		}
 	}
 }
 </script>
+
+<style>
+.toolbar-title {
+	color: white;
+}
+</style>
+

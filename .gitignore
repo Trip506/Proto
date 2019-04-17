@@ -82,3 +82,9 @@ dist
 
 # Service worker
 sw.*
+
+#Cockpit CMS
+cockpit-master
+
+#Custom layouts library 
+layouts/lib

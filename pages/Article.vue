@@ -5,7 +5,7 @@
 	<div>
 		<v-container grid-list-xs>
 			<v-layout row wrap>
-				<v-flex xs12 mt-5 v-for="(item, index) in data['entries']" :key="index">
+				<v-flex xs12 v-for="(item, index) in data['entries']" :key="index">
 					<v-card color="grey lighten-3">
 						<v-img height="200" :src="root + item.image.path">
 							<v-chip disabled color="secondary" text-color="white">

@@ -32,47 +32,9 @@
 								<v-flex xs12>
 									<v-card-text v-html="item.text"></v-card-text>
 								</v-flex>
-
-								<!-- gallery from Nuxter -->
-								<v-layout>
-									<v-flex xs12>
-										<v-container grid-list-sm fluid>
-											<v-img
-												contain
-												v-if="img==false"
-												width="600"
-												height="450"
-												:src="root + item.gallery[0].path"
-											></v-img>
-											<v-img contain v-if="img" width="600" height="450" :src="root + img"></v-img>
-
-											<v-layout row wrap>
-												<v-flex
-													v-for="gallery in item.gallery"
-													:key="n"
-													xs4
-													d-flex
-													@click="setImg(gallery.path)"
-												>
-													<v-img
-														max-height="100"
-														v-model="img"
-														:src="root + gallery.path"
-														:lazy-src="root + gallery.path"
-														aspect-ratio="1"
-														class="grey lighten-2"
-													>
-														<template v-slot:placeholder>
-															<v-layout fill-height align-center justify-center ma-0>
-																<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-															</v-layout>
-														</template>
-													</v-img>
-												</v-flex>
-											</v-layout>
-										</v-container>
-									</v-flex>
-								</v-layout>
+								<v-carousel touch>
+									<v-carousel-item v-for="(image,i) in item.gallery" :key="i" :src="root + image.path"></v-carousel-item>
+								</v-carousel>
 
 								<!-- Date and Location  -->
 							</v-layout>

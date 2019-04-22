@@ -1,16 +1,90 @@
 <template>
-	<v-layout>
-		<v-flex xs12>
-			<v-btn color="success" @click="fetch('5cb5af02316266ed570003b6')">fetch article 1</v-btn>
-			<v-btn color="success" @click="fetchData('5cb5c8b53162660879000190')">fetch article 2</v-btn>
-			<v-btn color="secondary" @click="fetchData($route.params.id)">fetch route params article 2</v-btn>
-			<v-btn color="primary" @click="getData()">get data</v-btn>
-			Router Params: {{$route.params.id}}
-			<!-- {{$route.params.payload.title}} -->
+	<div>
+		<v-parallax :src="require('@/assets/effect.png')"></v-parallax>
+		<v-card dark>
+			<v-container grid-list-xs>
+				<v-layout row wrap>
+					<v-flex xs12>
+						<h1 class="text-xs-center">Sam and Josefine Creative Services</h1>
+						<p
+							class="text-xs-center"
+						>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+					</v-flex>
+				</v-layout>
+			</v-container>
+		</v-card>
 
-			{{data}}
-		</v-flex>
-	</v-layout>
+		<v-container grid-list-xs>
+			<v-layout align-top justify-center row>
+				<v-flex xs12>
+					<h1 class="text-xs-center">
+						<v-icon mx-auto large>camera_alt</v-icon>
+						<br>Photography
+					</h1>
+					<p
+						class="text-xs-center"
+					>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+				</v-flex>
+				<v-flex xs12>
+					<h1 class="text-xs-center">
+						<v-icon mx-auto large>code</v-icon>
+						<br>Web Design
+					</h1>
+					<p
+						class="text-xs-center"
+					>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+				</v-flex>
+				<v-flex xs12>
+					<h1 class="text-xs-center">
+						<v-icon mx-auto large>perm_media</v-icon>
+						<br>Creative Media
+					</h1>
+					<p
+						class="text-xs-center"
+					>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+				</v-flex>
+			</v-layout>
+		</v-container>
+
+		<v-container grid-list-xs>
+			<v-container grid-list-md>
+				<v-layout align-top justify-center row>
+					<v-flex xs12 md6>
+						<v-card>
+							<v-img height="200" :src="require('@/assets/portrait4.jpg')"></v-img>
+							<v-card-title primary-title>Sam Furneaux</v-card-title>
+							<v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</v-card-text>
+
+							<v-card-actions>
+								<v-btn color="secondary">More</v-btn>
+							</v-card-actions>
+						</v-card>
+					</v-flex>
+					<v-flex xs12 md6>
+						<v-card>
+							<v-img height="200" :src="require('@/assets/josephine.jpg')"></v-img>
+							<v-card-title primary-title>Josefine</v-card-title>
+							<v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</v-card-text>
+							<v-card-actions>
+								<v-btn flat color="success">More</v-btn>
+							</v-card-actions>
+						</v-card>
+					</v-flex>
+				</v-layout>
+			</v-container>
+		</v-container>
+		<v-parallax :src="require('@/assets/portrait5.jpg')"></v-parallax>
+		<v-container grid-list-xs>
+			<v-layout row wrap>
+				<v-flex xs12>
+					<h1>Samuel Furneaux</h1>
+
+					<p>{{lorum}}</p>
+					<p>{{lorum}}</p>
+				</v-flex>
+			</v-layout>
+		</v-container>
+	</div>
 </template>
 
 <script>
@@ -18,7 +92,23 @@ import { mapActions } from 'vuex'
 export default {
 	data() {
 		return {
-			data: ['']
+			data: [''],
+			lorum:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+			items: [
+				{
+					src: require('@/assets/portrait5.jpg')
+				},
+				{
+					src: require('@/assets/orgiva1.jpg')
+				},
+				{
+					src: require('@/assets/orgiva4.jpg')
+				},
+				{
+					src: require('@/assets/orgiva3.jpg')
+				}
+			]
 		}
 	},
 

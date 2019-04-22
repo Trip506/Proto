@@ -24,6 +24,8 @@ export default {
     ]
   },
 
+
+
   /*
   ** Customize the progress-bar color
   */
@@ -41,10 +43,8 @@ export default {
   */
   plugins: [
     '@/plugins/vuetify',
-
     '@/plugins/vue-resource',
-
-
+    '@/plugins/vuelidate',
 
   ],
 

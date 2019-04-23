@@ -9,6 +9,8 @@ export const state = () => ({
     apiEntryPoint: '/api',
     apiToken: 'cfd974713763e995599407dabed44e',
     apiTokenDates: '1b169d577ca5bba4213a80c36e3c41',
+    apiTokenContact: 'ac31710ed9d3526b755583616a4372',
+    apiTokenTeachers: '515a740241fcf757b8a48b5019621d',
     fetchedData: [''],
     count: 0,
 })

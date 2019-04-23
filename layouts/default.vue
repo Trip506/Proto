@@ -108,6 +108,11 @@ export default {
 					icon: 'send',
 					title: 'Contact',
 					to: '/form'
+				},
+				{
+					icon: 'person',
+					title: 'Teachers',
+					to: '/teachers'
 				}
 			],
 			miniVariant: false,

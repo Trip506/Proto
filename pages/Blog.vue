@@ -2,6 +2,11 @@
 	<div>
 		<v-layout row wrap>
 			<v-flex xs12 mt-3>
+				<h1>Hello</h1>
+				<h2>Hello</h2>
+				<h3>Hello</h3>
+				<h4>Hello</h4>
+				<h5>Hello</h5>
 				<!-- <v-card elevation24> -->
 				<v-container grid-list-xs>
 					<v-layout column justify-center align-center>
